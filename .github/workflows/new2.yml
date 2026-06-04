@@ -17,5 +17,9 @@ jobs:
         with:
           python-version: '3.10'
 
-      - name: Run code
-        run: python app.py    # just runs the file directly
+      - name: Run all Python files
+        run: |
+          for f in *.py; do
+            echo "Running $f"
+            python "$f"
+          done
